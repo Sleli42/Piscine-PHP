@@ -1,0 +1,16 @@
+td { position: relative; }
+.page-title {color: black; text-align: center;}
+.style {display: inline-block; font-size: 200%; text-align: center;}
+.style2 {background-color :#8470FF; font-size: 200%; text-align: center;}
+.metaux {background-color :#800080; font-size: 200%; text-align: center;}
+.metaux-transit {background-color :#6495ED; font-size: 200%; text-align: center;}
+.non-metaux {background-color :#A52A2A; font-size: 200%; text-align: center;}
+.gaz {background-color :#FFFF00; font-size: 200%; text-align: center;}
+.case {display: inline-block; text-align: left;}
+.atomic-number { position: absolute; top: 3px; left: 3px; display: block;
+				font-size:65%;}
+.atomic-mass { position: absolute; bottom: 3px; right: 3px; display: block;
+				font-size:21%;}
+.name { position: center; display: block;
+				font-size:32%;}
+.image {display: block; margin : auto;}
