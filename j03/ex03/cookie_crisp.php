@@ -1,16 +1,20 @@
 <?PHP
 
-if (isset($_GET["action"]) && isset($_GET["name"]))
+if ($_GET['action'] == "set")
 {
-	if ($_GET["action"] == 'set' && isset($_GET['value']))
-    	setcookie($_GET['name'], $_GET['value']);
-	if ($_GET["action"] == 'get' && isset($COOKIE[$_GET['name']])
-	{
-		echo ("FDP\n");
-		echo $COOKIE[$_GET['name']];
-	}
-    if ($_GET["action"] == 'del')
-    	setcookie($get['name'], $_GET['value'], time()-300);
+	if (isset($_GET['name']) && isset($_GET['value']))
+   		setcookie($_GET['name'], $_GET['value'], time() + 5000000);
+   	else if (isset($_GET['name']))
+   		setcookie($_GET['name'], "", time() + 5000000);
+}
+if ($_GET['action'] == "get")
+	echo $_COOKIE[$_GET['name']]."\n";
+if ($_GET['action'] == "del")
+{
+	if (isset($_GET['value']))
+   		setcookie($_GET['name'], $_GET['value'], time()-300);
+   	else
+   		setcookie($_GET['name'], "", time()-300);
 }
 
 ?>
