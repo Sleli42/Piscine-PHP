@@ -23,16 +23,6 @@
 			var value1 = document.getElementById("value1");
 			var ops = document.getElementById("operators");
 			var value2 = document.getElementById("value2");
-			if ((value1.value && !value2.value) || (!value1.value && value2.value))
-			{
-				alert("thank you a second input value..");
-				console.log("thank you a second input value..");
-			}
-			if (!value1.value && !value2.value)
-			{
-				alert("thank you input two correct values..");
-				console.log("thank you input two correct values..");
-			}
 			if (ops.value == '/' && parseInt(value2.value) == 0)
 				alert("It's over 9000!");
 			if (ops.value == '%' && parseInt(value2.value) == 0)
@@ -65,8 +55,20 @@
 					console.log(parseInt(value1.value) - parseInt(value2.value));
 				}
 			}
-			else
+
+			if ((parseInt(value1.value) < 0 && parseInt(value2.value) < 0)
+				|| (isNaN(value1.value) == true || isNaN(value2.value) == true))
 				alert("Error :(");
+			if ((value1.value && !value2.value) || (!value1.value && value2.value))
+			{
+				alert("thank you a second input value..");
+				console.log("thank you a second input value..");
+			}
+			if (!value1.value && !value2.value)
+			{
+				alert("thank you input two correct values..");
+				console.log("thank you input two correct values..");
+			}
 		}
 		</script>
 	</body>
