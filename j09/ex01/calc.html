@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Calc</title>
+	</head>
+	<body>
+		<form onsubmit="calc_func()">
+		<input id="value1" type="text">
+				<select id="operators">
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+					<option value="%">%</option>
+				</select>
+			<input id="value2" type="text">
+			<input type="submit" value="Try me!">
+		</form>
+		<script type="text/javascript">
+		setInterval("alert('Please, use me...')", 30000);
+		function calc_func() {
+			var value1 = document.getElementById("value1");
+			var ops = document.getElementById("operators");
+			var value2 = document.getElementById("value2");
+			if ((value1.value && !value2.value) || (!value1.value && value2.value))
+			{
+				alert("thank you a second input value..");
+				console.log("thank you a second input value..");
+			}
+			if (!value1.value && !value2.value)
+			{
+				alert("thank you input two correct values..");
+				console.log("thank you input two correct values..");
+			}
+			if (ops.value == '/' && parseInt(value2.value) == 0)
+				alert("It's over 9000!");
+			if (ops.value == '%' && parseInt(value2.value) == 0)
+				alert("It's over 9000!");
+			if (parseInt(value1.value) >= 0 && parseInt(value2.value) >= 0)
+			{
+				if (ops.value == '+' && value1.value)
+				{
+					alert(parseInt(value1.value) + parseInt(value2.value));
+					console.log(parseInt(value1.value) + parseInt(value2.value));
+				}
+				if (ops.value == '/' && parseInt(value2.value) > 0)
+				{
+					alert(parseInt(value1.value) / parseInt(value2.value));
+					console.log(parseInt(value1.value) / parseInt(value2.value));
+				}
+				if (ops.value == '%' && parseInt(value2.value) > 0)
+				{
+					alert(parseInt(value1.value) % parseInt(value2.value));
+					console.log(parseInt(value1.value) % parseInt(value2.value));
+				}
+				if (ops.value == '*')
+				{
+					alert(parseInt(value1.value) * parseInt(value2.value));
+					console.log(parseInt(value1.value) * parseInt(value2.value));
+				}
+				if (ops.value == '-')
+				{
+					alert(parseInt(value1.value) - parseInt(value2.value));
+					console.log(parseInt(value1.value) - parseInt(value2.value));
+				}
+			}
+			else
+				alert("Error :(");
+		}
+		</script>
+	</body>
+</html>

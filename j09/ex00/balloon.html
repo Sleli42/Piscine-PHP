@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<style>
+		#balloon {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			border-radius: 100%
+		}
+	</style>
+	<head>
+		<title>Balloon</title>
+	</head>
+	<body>
+		<center>
+			<div id="balloon" onclick="onclick_func()" onmouseout="onmouseout_func()">
+			</div>
+		</center>
+		<script type="text/javascript">
+			var tab_color = new Array('red', 'green', 'blue');
+			var	i = 0;
+			var obj = document.getElementById('balloon');
+			function onclick_func() {
+				var width = obj.clientWidth;
+				var height = obj.clientHeight;
+				if (width < 420 && height < 420)
+					width += 10, height += 10;
+				else
+					width = 200, height = 200;
+				console.log(obj);
+				obj.setAttribute('style', 'width: '+width+'px; height: '+height+'px; background-Color: '+tab_color[i++]+' ;');
+				if (i == 3)
+					i = 0;
+			}
+
+			function onmouseout_func() {
+				var width = obj.clientWidth;
+				var height = obj.clientHeight;
+				if (width > 200 && height > 200)
+					width -= 5, height -= 5;
+				else
+					width = 200, height = 200;
+				console.log(obj);
+				obj.setAttribute('style', 'width: '+width+'px; height: '+height+'px; background-Color: '+tab_color[i--]+' ;');
+				if (i < 0)
+					i = 2;
+			}
+		</script>
+	</body>
+</html>
