@@ -1,3 +1,3 @@
 # Piscine-PHP
-Pour plus d'informations -> Florent manaudou\n
+Pour plus d'informations -> Florent manaudou
 ---> https://github.com/Sksourou/
